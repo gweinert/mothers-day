@@ -84,6 +84,13 @@
 <script>
     const video = document.querySelector('video');
     const playButton = document.querySelector('.button');
+    const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+    if (!iOS) {
+        playButton.style.display = 'none';
+    }
+
+
 
     function handleClick() {
         playButton.style.display = 'none';
