@@ -26,21 +26,40 @@
             font-size: 24px;
             color: rebeccapurple;
         }
+
+        .button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -37px;
+            box-sizing: border-box;
+            height: 74px;
+
+            border-color: transparent transparent transparent #202020;
+            transition: 100ms all ease;
+            will-change: border-width;
+            cursor: pointer;
+
+            border-style: solid;
+            border-width: 37px 0 37px 60px;
+
+        }
     </style>
 </head>
 <body>
 
 <div class="card-holder">
-    <!--            poster="https://d3vfpr1jrz597r.cloudfront.net/ecards/video-thumbs/npz5649.jpg"-->
+    <div class="button"></div>
 
     <video
             class="ecard-player"
             preload="auto"
-            autoplay
             loop
             fullscreen=""
             role="button"
             tabindex="0"
+            onclick="handleClick()"
+            poster="https://d3vfpr1jrz597r.cloudfront.net/ecards/video-thumbs/npz5649.jpg"
             style="height: 665px;">
         <source type="video/webm"
                 src="https://d3vfpr1jrz597r.cloudfront.net/ecards/webm/npz5649.webm"
@@ -55,6 +74,16 @@
     <p>I love you lots!! xoxox</p>
     <p><3 Garrett</p>
 </div>
+
+<script>
+    const video = document.querySelector('video');
+    const playButton = document.querySelector('.button');
+
+    function handleClick() {
+        playButton.style.display = 'none';
+        video.play();
+    }
+</script>
 
 </body>
 </html>
